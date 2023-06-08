@@ -5,8 +5,8 @@ from categorias.models import Categoria
 
 class Livros(models.Model):
     nome = models.CharField(max_length=120)
-    autores = models.ManyToManyField(Autor)
-    categorias = models.ManyToManyField(Categoria)
+    autor = models.ForeignKey(Autor, on_delete=models.SET_NULL, null=True)
+    categoria = models.ManyToManyField(Categoria)
     
     def __str__(self):
         return self.nome
