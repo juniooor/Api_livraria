@@ -4,10 +4,6 @@ from livros.models import Livros
 from autores.models import Autor
 from categorias.models import Categoria
 
-# class LivroSerializers(serializers.HyperlinkedModelSerializer):
-#     class Meta:
-#         model = Livros
-#         fields = ['nome', 'autores', 'categorias', 'id']
         
 class AutorSerializer(serializers.ModelSerializer):
     class Meta:
@@ -23,8 +19,8 @@ class CategoriaSerializer(serializers.ModelSerializer):
 
 class LivroSerializers(serializers.ModelSerializer):
     autor = AutorSerializer()
-    categorias = CategoriaSerializer(many=True)
+    categoria = CategoriaSerializer(many=True)
 
     class Meta:
         model = Livros
-        fields = ['id', 'nome', 'autor', 'categorias']
+        fields = ['id', 'nome', 'autor', 'categoria']
