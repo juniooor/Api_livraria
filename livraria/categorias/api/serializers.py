@@ -1,9 +1,9 @@
 
 from rest_framework import serializers
-from livros.models import Livros
+from categorias.models import Categoria
 
 
-class LivroSerializer(serializers.HyperlinkedModelSerializer):
+class CategoriaSerializers(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = Livros
-        fields = ['nome', 'autorid', 'categoriaid', 'id']
+        model = Categoria
+        fields = ['nome',  'id']

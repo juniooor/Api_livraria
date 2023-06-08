@@ -1,7 +1,7 @@
-from serializers import LivroSerializer
+from .serializers import CategoriaSerializers
 from rest_framework.viewsets import ModelViewSet
-from livros.models import Livros
+from categorias.models import Categoria
     
-class LivroViewset(ModelViewSet):
-    queryset = Livros.objects.all()
-    serializer_class = LivroSerializer
+class CategoriaViewset(ModelViewSet):
+    queryset = Categoria.objects.all()
+    serializer_class = CategoriaSerializers
